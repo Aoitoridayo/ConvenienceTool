@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tool = ["おつり計算", "カウント", "タイマー"]
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            NavigationView {
+                List {
+                    NavigationLink(destination: ChangeCalclationView()) {
+                        Text(tool[0])
+                    }
+                    NavigationLink(destination: CountUpView()) {
+                        Text(tool[1])
+                    }
+                    NavigationLink(destination: TimerView()) {
+                        Text(tool[2])
+                    }
+                }
+                .navigationTitle(Text("便利ツール"))
+            }
         }
-        .padding()
     }
 }
 
