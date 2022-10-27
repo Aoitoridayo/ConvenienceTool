@@ -1,9 +1,3 @@
-//
-//  ChangeCalclationView.swift
-//  ConvenienceToolApp
-//
-//  Created by 渡邊魁優 on 2022/10/18.
-//
 
 import SwiftUI
 
@@ -11,6 +5,7 @@ struct ChangeCalclationView: View {
     @State var inputPrice = ""
     @State var inputMoney = ""
     @State var change = 0
+    @State var isAlert = false
     
     var body: some View {
         VStack(spacing: 50) {
@@ -38,7 +33,17 @@ struct ChangeCalclationView: View {
                 .font(.title)
             
             Button {
-                change = Int(inputMoney)! - Int(inputPrice)!
+                if let unWrappedPrice = Int(inputPrice) {
+                    if let unWrappedMoney = Int(inputMoney) {
+                        change = unWrappedMoney - unWrappedPrice
+                    }
+                    else {
+                        isAlert = true
+                    }
+                }
+                else {
+                    isAlert = true
+                }
             } label: {
                 Text("計算")
                     .font(.largeTitle)
@@ -48,6 +53,11 @@ struct ChangeCalclationView: View {
                     .clipShape(Circle())
             }
             .shadow(color: Color.gray, radius: 10, x: 0, y: 10)
+            .alert("エラー", isPresented: $isAlert) {
+                Button("OK") {}
+            } message: {
+                Text("金額を入力してください")
+            }
         }
     }
 }

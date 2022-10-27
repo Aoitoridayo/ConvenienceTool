@@ -1,3 +1,4 @@
+
 import SwiftUI
 
 struct TimerView: View {
@@ -6,31 +7,22 @@ struct TimerView: View {
     @State var isAlert = false
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Spacer()
+        NavigationStack {
+            VStack(spacing: 30) {
                 Spacer()
                 Text(String(timerNum))
                     .font(.largeTitle)
                 Spacer()
-                Spacer()
+                
+                HStack(spacing: 20) {
+                    addTimerBottonViwe(addCount: "-60", buttonColor: .red)
+                    addTimerBottonViwe(addCount: "-10", buttonColor: .red)
+                    addTimerBottonViwe(addCount: "+10", buttonColor: .blue)
+                    addTimerBottonViwe(addCount: "+60", buttonColor: .blue)
+                }
                 
                 HStack(spacing: 30) {
-                    
                 //スタートボタン
-                    Button(action: {
-                        startTimer()
-                    }) {
-                        Text("スタート")
-                            .font(.title)
-                            .foregroundColor(Color.white)
-                            .frame(width: 140, height: 140)
-                    }
-                    .background(Color.red)
-                    .clipShape(Circle())
-                    .shadow(color: Color.gray, radius: 10, x: 0, y: 10)
-                    
-                //ストップボタン
                     Button(action: {
                         if let unWapedTimerHandler = timerHandler {
                             if unWapedTimerHandler.isValid == true {
@@ -43,9 +35,29 @@ struct TimerView: View {
                             .foregroundColor(Color.white)
                             .frame(width: 140, height: 140)
                     }
+                    .background(Color.red)
+                    .clipShape(Circle())
+                    .shadow(color: Color.gray, radius: 10, x: 0, y: 10)
+                    
+                //ストップボタン
+                    Button(action: {
+                        startTimer()
+                    }) {
+                        Text("スタート")
+                            .font(.title)
+                            .foregroundColor(Color.white)
+                            .frame(width: 140, height: 140)
+                    }
                     .background(Color.blue)
                     .clipShape(Circle())
                     .shadow(color: Color.gray, radius: 10, x: 0, y: 10)
+                }
+                Button {
+                    timerNum = 0
+                } label: {
+                    Text("リセット")
+                        .font(.title3)
+                        .foregroundColor(Color.black)
                 }
                 Spacer()
             }
@@ -54,11 +66,6 @@ struct TimerView: View {
                       message: Text("タイマー終了です"),
                       dismissButton: .default(Text("確認"))
                 )
-            }
-            .toolbar {
-                NavigationLink("秒数設定") {
-                    TimerSetView()
-                }
             }
         }
     }
@@ -77,6 +84,26 @@ struct TimerView: View {
                 timerNum = 0
             }
         }
+    }
+}
+
+struct addTimerBottonViwe: View {
+    let addCount: String
+    let buttonColor: Color
+    @AppStorage("timerNumKey") var timerNum = 10
+    
+    var body: some View {
+        Button(action: {
+            timerNum += Int(addCount)!
+        }) {
+            Text(addCount)
+                .font(.title)
+                .foregroundColor(Color.white)
+                .frame(width: 70, height: 70)
+        }
+        .background(buttonColor)
+        .clipShape(Circle())
+        .shadow(color: Color.gray, radius: 10, x: 0, y: 10)
     }
 }
 

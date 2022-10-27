@@ -14,7 +14,6 @@
 		0B6BA56128FED2D9000A5C74 /* ChangeCalclationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6BA56028FED2D9000A5C74 /* ChangeCalclationView.swift */; };
 		0B6BA56328FEDE96000A5C74 /* CountUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6BA56228FEDE96000A5C74 /* CountUpView.swift */; };
 		0B6BA56528FEE0E5000A5C74 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6BA56428FEE0E5000A5C74 /* TimerView.swift */; };
-		0B704CF228FFB73400F47798 /* TimerSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B704CF128FFB73400F47798 /* TimerSetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		0B6BA56028FED2D9000A5C74 /* ChangeCalclationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCalclationView.swift; sourceTree = "<group>"; };
 		0B6BA56228FEDE96000A5C74 /* CountUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountUpView.swift; sourceTree = "<group>"; };
 		0B6BA56428FEE0E5000A5C74 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		0B704CF128FFB73400F47798 /* TimerSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 			children = (
 				0B6BA55028FEC719000A5C74 /* ConvenienceToolAppApp.swift */,
 				0B6BA55228FEC719000A5C74 /* ContentView.swift */,
-				0B704CF128FFB73400F47798 /* TimerSetView.swift */,
 				0B6BA56228FEDE96000A5C74 /* CountUpView.swift */,
 				0B6BA56428FEE0E5000A5C74 /* TimerView.swift */,
 				0B6BA56028FED2D9000A5C74 /* ChangeCalclationView.swift */,
@@ -154,7 +151,6 @@
 				0B6BA56328FEDE96000A5C74 /* CountUpView.swift in Sources */,
 				0B6BA56128FED2D9000A5C74 /* ChangeCalclationView.swift in Sources */,
 				0B6BA55128FEC719000A5C74 /* ConvenienceToolAppApp.swift in Sources */,
-				0B704CF228FFB73400F47798 /* TimerSetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,8 +285,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,6 +294,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.watanabe.ConvenienceToolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,8 +317,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,6 +326,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.watanabe.ConvenienceToolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

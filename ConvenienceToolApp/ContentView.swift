@@ -1,27 +1,21 @@
-//
-//  ContentView.swift
-//  ConvenienceToolApp
-//
-//  Created by 渡邊魁優 on 2022/10/18.
-//
 
 import SwiftUI
 
 struct ContentView: View {
-    @State var tool = ["おつり計算", "カウント", "タイマー"]
+    private let tools = ["おつり計算", "カウント", "タイマー"]
     
     var body: some View {
         VStack {
-            NavigationView {
+            NavigationStack {
                 List {
                     NavigationLink(destination: ChangeCalclationView()) {
-                        Text(tool[0])
+                        Text(tools[0])
                     }
                     NavigationLink(destination: CountUpView()) {
-                        Text(tool[1])
+                        Text(tools[1])
                     }
                     NavigationLink(destination: TimerView()) {
-                        Text(tool[2])
+                        Text(tools[2])
                     }
                 }
                 .navigationTitle(Text("便利ツール"))
